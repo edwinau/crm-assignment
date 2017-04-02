@@ -1,14 +1,14 @@
 class Contact
+ @@display_all = []
 
   attr_reader :exit
-  attr_accessor :add, :modify, :delete, :display_all, :search_by_attribute
+  attr_accessor :add, :modify, :delete,  :display_all, :search_by_attribute
 
   # This method should initialize the contact's attributes
   def initialize
     @add = add
     @modify = modify
     @delete = delete
-    @display_all = display_all
     @search_by_attribute = search_by_attribute
     @exit = exit
   end
@@ -16,15 +16,16 @@ class Contact
   # This method should call the initializer,
   # store the newly created contact, and then return it
   def self.create
-    @@display_all=[]
     x = Contact.new
     @@display_all << x
-    return x 
+    return x
   end
+
+  # def add(first name, last name, email, note)
 
   # This method should return all of the existing contacts
   def self.all
-
+    puts @@display_all
   end
 
   # This method should accept an id as an argument
