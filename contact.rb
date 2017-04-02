@@ -11,13 +11,15 @@ class Contact
     @display_all = display_all
     @search_by_attribute = search_by_attribute
     @exit = exit
-
   end
 
   # This method should call the initializer,
   # store the newly created contact, and then return it
   def self.create
-
+    @@display_all=[]
+    x = Contact.new
+    @@display_all << x
+    return x 
   end
 
   # This method should return all of the existing contacts
