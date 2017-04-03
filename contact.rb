@@ -1,16 +1,24 @@
 class Contact
- @@display_all = []
+ @@display_all = {}
+ @add = add
+ @modify = modify
+ @delete = delete
+ @search_by_attribute = search_by_attribute
+ @exit = exit
 
   attr_reader :exit
-  attr_accessor :add, :modify, :delete,  :display_all, :search_by_attribute
+  attr_accessor :add, :modify, :delete, :first_name, :display_all, :search_by_attribute; first
 
   # This method should initialize the contact's attributes
   def initialize
-    @add = add
-    @modify = modify
-    @delete = delete
-    @search_by_attribute = search_by_attribute
-    @exit = exit
+    puts "please choose from the following"
+    puts " - add"
+    puts " - modify"
+    puts " - delete"
+    puts " - display_all"
+    puts " - search by attribute"
+    puts " - exit"
+    gets.chomp!
   end
 
   # This method should call the initializer,
@@ -21,11 +29,16 @@ class Contact
     return x
   end
 
-  # def add(first name, last name, email, note)
 
   # This method should return all of the existing contacts
   def self.all
     puts @@display_all
+  end
+
+  def add(first_name, last_name, email, note)
+    @first_name = first_name
+    @last_name = last_name
+
   end
 
   # This method should accept an id as an argument
