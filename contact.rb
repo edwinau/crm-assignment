@@ -85,8 +85,8 @@ class Contact
 
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
-  def delete
-
+  def self.delete(first_name)
+    @@contacts.delete_if {|contact| contact.first_name == first_name}
   end
 
   # Feel free to add other methods here, if you need them.
