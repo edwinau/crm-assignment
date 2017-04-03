@@ -1,9 +1,9 @@
 require_relative "contact"
 
-class CRM
+class Crm
 
   def self.create(name)
-    new_crm = CRM.new(name)
+    new_crm = Crm.new(name)
     return new_crm
   end
 

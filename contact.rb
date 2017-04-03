@@ -1,13 +1,7 @@
 class Contact
- # @@display_all = {}
- # @add = add
- # @modify = modify
- # @delete = delete
- # @search_by_attribute = search_by_attribute
- # @exit = exit
 
   attr_reader :id
-  attr_accessor :add, :modify, :delete, :first_name, :display_all, :search_by_attribute, :first_name, :last_name, :email, :note
+  attr_accessor :first_name, :last_name, :email, :note
 
   @@contacts =[]
   @@id = 100
@@ -94,19 +88,26 @@ class Contact
 
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
-  def self.delete(contact)
-    @@contacts.delete(contact)
-  end
+  # def self.delete(contact)
+  #   @@contacts.delete(contact)
+  #   return @@contacts
+  # end
 
-  def self.delete_by_first_name(first_name)
+  def self.delete(first_name)
     @@contacts.delete_if {|contact| contact.first_name == first_name}
+    return @@contacts
   end
 
   # Feel free to add other methods here, if you need them.
-
 end
 
-
+=begin
+debug techniques
+  -"puts statements
+  -seacrh on google (error message)
+  -read the error message (line number, stack trace)
+  -ruby.docs
+=end
 
 
 
