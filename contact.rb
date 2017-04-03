@@ -33,7 +33,7 @@ class Contact
 
   # This method should return all of the existing contacts
   def self.all
-    puts @@contacts
+    return @@contacts
   end
 
   # This method should accept an id as an argument
@@ -63,6 +63,12 @@ class Contact
     @@contacts.each do |person|
       if attribute_name == "first_name" && value == person.first_name
         return person
+      elsif attribute_name == "last_name" && value == person.last_name
+        return person
+      elsif attribute_name == "email" && value == person.email
+        return person
+      elsif attribute_name == "note" && value == person.note
+        return person
       end
     end
     return nil
@@ -70,7 +76,7 @@ class Contact
 
   # This method should delete all of the contacts
   def self.delete_all
-
+    @@contacts.clear
   end
 
   def full_name
