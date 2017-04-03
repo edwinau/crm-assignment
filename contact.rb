@@ -80,7 +80,7 @@ class Contact
   end
 
   def full_name
-
+    return "#{first_name.capitalize} #{last_name.capitalize}"
   end
 
   # This method should delete the contact
