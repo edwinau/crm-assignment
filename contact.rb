@@ -19,12 +19,12 @@ class Contact
     @email = email
     @note = note
     @id = @@id
-    @@id += 1
+    @@id += 10
   end
 
   # This method should call the initializer,
   # store the newly created contact, and then return it
-  def self.create
+  def self.create(first_name, last_name, email, note)
     new_contact = Contact.new(first_name, last_name, email, note)
     @@contacts << new_contact
     return new_contact
@@ -38,8 +38,13 @@ class Contact
 
   # This method should accept an id as an argument
   # and return the contact who has that id
-  def self.find
-
+  def self.find(id_find)
+    @@contacts.each do |person|
+      if person.id == id_find
+        return person
+      end
+    end
+    return nil
   end
 
   # This method should allow you to specify
