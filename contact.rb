@@ -51,9 +51,18 @@ class Contact
   # 1. which of the contact's attributes you want to update
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
-  def update
-
+  def update(attribute, new_value)
+    if attribute == "first_name"
+      self.first_name = new_value
+    elsif attribute == "last_name"
+      self.last_name = new_value
+    elsif attribute == "email"
+      self.email = new_value
+    elsif attribute == "note"
+      self.note = new_value
+    end
   end
+
 
   # This method should work similarly to the find method above
   # but it should allow you to search for a contact using attributes other than id
@@ -85,7 +94,11 @@ class Contact
 
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
-  def self.delete(first_name)
+  def self.delete(contact)
+    @@contacts.delete(contact)
+  end
+
+  def self.delete_by_first_name(first_name)
     @@contacts.delete_if {|contact| contact.first_name == first_name}
   end
 
